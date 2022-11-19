@@ -1,13 +1,7 @@
-import {
-  Button,
-  HStack,
-  Input,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { HStack, Input, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { Mesa, IMesa } from "../../components/MesaComponents/Mesa";
+import { ButtonDefault } from "../../components/UI/ButtonDefault";
 import useUtils from "../../hooks/useUtils";
 
 export function Mesas() {
@@ -45,9 +39,11 @@ export function Mesas() {
           }}
         />
 
-        <Button onClick={() => generateMesas(Number(inputRef.current?.value))}>
+        <ButtonDefault
+          onClick={() => generateMesas(Number(inputRef.current?.value))}
+        >
           Criar mesas
-        </Button>
+        </ButtonDefault>
       </HStack>
 
       <SimpleGrid columns={4} spacing={12} alignItems={"center"}>

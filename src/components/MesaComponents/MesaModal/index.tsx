@@ -8,6 +8,12 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Table,
+  Tbody,
+  Td,
+  Tr,
+  Th,
+  Thead,
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -40,8 +46,51 @@ export default function MesaModal({ id, name }: IMesaModalProps) {
         <ModalContent>
           <ModalCloseButton />
           <ModalHeader>Recibo parcial {name} </ModalHeader>
-          <ModalBody>
-            <Flex justify={"space-between"}>
+          <ModalBody p="20px">
+            <Table variant={"simple"}>
+              <Thead>
+                <Tr>
+                  <Th>Qtde</Th>
+                  <Th>Item</Th>
+                  <Th>Preço</Th>
+                </Tr>
+              </Thead>
+
+              <Tbody>
+                <Tr>
+                  <Td>1</Td>
+                  <Td>Coca Cola</Td>
+                  <Td>
+                    {new Intl.NumberFormat("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(5)}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>1</Td>
+                  <Td>Supreme Bacon Burger</Td>
+                  <Td>
+                    {new Intl.NumberFormat("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(25)}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>1</Td>
+                  <Td>Supre Picanha Burger</Td>
+                  <Td>
+                    {new Intl.NumberFormat("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(15)}
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+
+            <Flex justify={"space-between"} mt="50px">
               <Button
                 bg={"azul"}
                 color={"white"}

@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
+import { Cardapio } from "../Cardapio";
 import { Mesas } from "../Mesas";
 
 export function Home() {
@@ -76,10 +77,10 @@ export function Home() {
 
       <TabPanels>
         <TabPanel>
-          <Mesas />
+          <Cardapio />
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
+          <Mesas />
         </TabPanel>
         <TabPanel>
           <p>three!</p>
