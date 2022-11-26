@@ -7,7 +7,8 @@ import { useCardapio } from "../../hooks/useCardapio";
 interface Props {}
 
 export function Cardapio(props: Props) {
-  const [category, setCategory] = useState<string>("");
+  const { categories } = useCardapio();
+  const [category, setCategory] = useState<string>(categories[0]);
 
   return (
     <HStack spacing={"20px"}>

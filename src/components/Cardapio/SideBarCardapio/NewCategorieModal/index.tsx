@@ -31,7 +31,7 @@ export function NewCategorieModal(props: Props) {
           <ModalCloseButton />
           <ModalBody>
             <Stack>
-              <FormControl>
+              <FormControl mb="10px">
                 <FormLabel>Insira o nome da nova categoria</FormLabel>
                 <Input
                   type={"text"}

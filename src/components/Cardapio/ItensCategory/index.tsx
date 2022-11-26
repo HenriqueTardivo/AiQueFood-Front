@@ -5,20 +5,21 @@ interface Props {
   category: string;
 }
 
-export function ItensCategory(props: Props) {
-  const { getItems } = useCardapio();
+export function ItensCategory({ category }: Props) {
+  //const { getItems } = useCardapio();
 
   return (
     <Flex
       flex={1}
       minH={"80vh"}
-      borderWidth={"2px"}
+      borderWidth={"1px"}
       borderColor={"gray"}
       borderRadius={"12px"}
+      p="25px"
     >
       <Flex justify={"space-between"}>
         <Text fontSize={"4xl"} fontWeight={"bold"}>
-          Lanches
+          {category}
         </Text>
       </Flex>
     </Flex>

@@ -1,6 +1,4 @@
 import {
-  Box,
-  Button,
   Flex,
   Link,
   ListItem,
@@ -17,9 +15,9 @@ interface Props {
 }
 
 export function SideBarCardapio({ changeCategory }: Props) {
-  const { categories, newCategorie } = useCardapio();
+  //const { categories, newCategorie } = useCardapio();
 
-  useEffect(() => changeCategory(categories[0]));
+  //useEffect(() => changeCategory(categories[0]));
 
   return (
     <Flex
@@ -27,7 +25,7 @@ export function SideBarCardapio({ changeCategory }: Props) {
       minH={"80vh"}
       as={"aside"}
       w={"15%"}
-      borderWidth={"2px"}
+      borderWidth={"1px"}
       borderColor={"gray"}
       borderRadius={"12px"}
       p="15px"
@@ -38,23 +36,23 @@ export function SideBarCardapio({ changeCategory }: Props) {
         </Text>
 
         <UnorderedList pl="16px" color={"azul"}>
-          {categories.map((cat, index) => (
+          {/* {categories.map((cat, index) => (
             <ListItem key={index}>
               <Link onClick={() => changeCategory(cat)}>{cat}</Link>
             </ListItem>
-          ))}
+          ))} */}
 
           <ListItem>
-            <Link onClick={() => changeCategory("teste")}>Entradas</Link>
+            <Link onClick={() => changeCategory("Entradas")}>Entradas</Link>
           </ListItem>
           <ListItem>
-            <Link onClick={() => changeCategory("teste")}>Pizzas</Link>
+            <Link onClick={() => changeCategory("Pizzas")}>Pizzas</Link>
           </ListItem>
           <ListItem>
-            <Link onClick={() => changeCategory("teste")}>Lanches</Link>
+            <Link onClick={() => changeCategory("Lanches")}>Lanches</Link>
           </ListItem>
           <ListItem>
-            <Link onClick={() => changeCategory("teste")}>Bedidas</Link>
+            <Link onClick={() => changeCategory("Bedidas")}>Bedidas</Link>
           </ListItem>
         </UnorderedList>
       </Stack>
