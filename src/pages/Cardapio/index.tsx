@@ -12,7 +12,10 @@ export function Cardapio(props: Props) {
 
   return (
     <HStack spacing={"20px"}>
-      <SideBarCardapio changeCategory={(cat) => setCategory(cat)} />
+      <SideBarCardapio
+        changeCategory={(cat) => setCategory(cat)}
+        selectedCategorie={category}
+      />
 
       <ItensCategory category={category} />
     </HStack>

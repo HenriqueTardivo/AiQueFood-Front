@@ -6,18 +6,16 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { useCardapio } from "../../../hooks/useCardapio";
 import { NewCategorieModal } from "./NewCategorieModal";
 
 interface Props {
   changeCategory: (category: string) => void;
+  selectedCategorie: string;
 }
 
-export function SideBarCardapio({ changeCategory }: Props) {
-  //const { categories, newCategorie } = useCardapio();
-
-  //useEffect(() => changeCategory(categories[0]));
+export function SideBarCardapio({ changeCategory, selectedCategorie }: Props) {
+  const { categories } = useCardapio();
 
   return (
     <Flex
@@ -28,6 +26,7 @@ export function SideBarCardapio({ changeCategory }: Props) {
       borderWidth={"1px"}
       borderColor={"gray"}
       borderRadius={"12px"}
+      boxShadow={"5px 5px 10px  #888888"}
       p="15px"
     >
       <Stack>
@@ -36,24 +35,21 @@ export function SideBarCardapio({ changeCategory }: Props) {
         </Text>
 
         <UnorderedList pl="16px" color={"azul"}>
-          {/* {categories.map((cat, index) => (
-            <ListItem key={index}>
-              <Link onClick={() => changeCategory(cat)}>{cat}</Link>
-            </ListItem>
-          ))} */}
+          {categories.map((cat, index) => {
+            const isSelected = selectedCategorie === cat;
 
-          <ListItem>
-            <Link onClick={() => changeCategory("Entradas")}>Entradas</Link>
-          </ListItem>
-          <ListItem>
-            <Link onClick={() => changeCategory("Pizzas")}>Pizzas</Link>
-          </ListItem>
-          <ListItem>
-            <Link onClick={() => changeCategory("Lanches")}>Lanches</Link>
-          </ListItem>
-          <ListItem>
-            <Link onClick={() => changeCategory("Bedidas")}>Bedidas</Link>
-          </ListItem>
+            return (
+              <ListItem key={index}>
+                <Link
+                  onClick={() => changeCategory(cat)}
+                  fontWeight={isSelected ? "bold" : "normal"}
+                  fontSize={isSelected ? "2xl" : "medium"}
+                >
+                  {cat}
+                </Link>
+              </ListItem>
+            );
+          })}
         </UnorderedList>
       </Stack>
 

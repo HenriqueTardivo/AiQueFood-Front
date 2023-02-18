@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function ItensCategory({ category }: Props) {
-  //const { getItems } = useCardapio();
+  const { getItems } = useCardapio();
 
   return (
     <Flex
@@ -15,6 +15,7 @@ export function ItensCategory({ category }: Props) {
       borderWidth={"1px"}
       borderColor={"gray"}
       borderRadius={"12px"}
+      boxShadow={"5px 5px 10px  #888888"}
       p="25px"
     >
       <Flex justify={"space-between"}>

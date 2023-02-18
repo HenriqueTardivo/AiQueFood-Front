@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext } from "react";
-
+import { createContext, ReactNode, useContext, useState } from "react";
+import { categories } from "../constants/cardapio";
 interface CardapioContextProps {
   categories: string[];
   getItems: () => Promise<void>;
@@ -12,8 +12,6 @@ const CardapioContext = createContext<CardapioContextProps>(
 );
 
 export function CardapioProvider({ children }: { children: ReactNode }) {
-  const categories = ["teste"];
-
   async function getItems() {}
   async function newCategorie() {}
   async function newItem() {}
